@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe - Battle Arena</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Setup Modal -->
+  <div id="setupModal" class="modal">
+    <div class="modal-content">
+      <h1>⚡ Tic Tac Toe Battle Arena</h1>
+      <p>Enter player names to begin</p>
+      
+      <div class="input-group">
+        <label for="player1Name">Player 1 (X)</label>
+        <input type="text" id="player1Name" placeholder="Player 1" maxlength="15">
+      </div>
+      
+      <div class="input-group">
+        <label for="player2Name">Player 2 (O)</label>
+        <input type="text" id="player2Name" placeholder="Player 2" maxlength="15">
+      </div>
+      
+      <button id="startBtn" class="btn-primary">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Main Game Container -->
+  <div id="gameContainer" class="game-container hidden">
+    <div class="game-header">
+      <div class="score-box">
+        <div class="score-item">
+          <span class="player-name" id="p1Name">Player 1</span>
+          <span class="score" id="p1Score">0</span>
+        </div>
+        <div class="vs">VS</div>
+        <div class="score-item">
+          <span class="player-name" id="p2Name">Player 2</span>
+          <span class="score" id="p2Score">0</span>
+        </div>
+      </div>
+
+      <div class="game-info">
+        <div class="timer">⏱️ <span id="timer">0:00</span></div>
+        <div class="turn-display" id="turnDisplay">⭕ Player 1's Turn</div>
+      </div>
+    </div>
+
+    <div class="board-container">
+      <div class="board" id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+    </div>
+
+    <div class="game-controls">
+      <button id="resetBtn" class="btn-secondary">New Round</button>
+      <button id="resetScoreBtn" class="btn-secondary">Reset Score</button>
+      <button id="newGameBtn" class="btn-primary">New Game</button>
+    </div>
+  </div>
+
+  <!-- Win Modal -->
+  <div id="winModal" class="modal hidden">
+    <div class="modal-content win-content">
+      <h1 id="winMessage">🎉 Player 1 Wins! 🎉</h1>
+      <p id="winStats"></p>
+      <button id="nextRoundBtn" class="btn-primary">Next Round</button>
+    </div>
+  </div>
+
+  <!-- Explosion Canvas -->
+  <canvas id="explosionCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
